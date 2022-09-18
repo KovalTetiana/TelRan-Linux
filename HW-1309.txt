@@ -1,0 +1,35 @@
+#!/bin/bash#!
+ echo Enter your name!
+ read NAME
+echo Hello $NAME, welcome to the system!
+
+mkdir -p /tmp/test
+touch /tmp/test/mydate.txt
+
+
+T=$(date +%H:%M:%S)
+echo $T > /tmp/test/mydate.txt
+
+echo "Saving data"
+
+for RUN in {1..10}
+do
+echo $RUN
+sleep 0.5
+done
+
+echo "Data saved continue working"
+
+echo $(df -h) >> /tmp/test/mydate.txt
+
+mkdir - p /opt/mydate
+cp /tmp/test/mydate.txt /opt/mydate/newmydate.txt
+
+for RUN in {1..10}
+do
+echo $RUN
+sleep 1
+done
+
+echo  Done Boss
+
